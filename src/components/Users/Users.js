@@ -16,7 +16,7 @@ class Users extends React.Component {
         return <div>
         <button onClick={this.getUsers}>Get Users</button>
         {
-        this.props.users.map( u =>  <div key = {u.id}>
+        this.props.users?.map( u =>  <div key = {u.id}>
             <span>
                 <div>
                     <img src={u.photos.small != null ? u.photos.small: 'userPhoto'} className={styles.UserPhoto}/>
