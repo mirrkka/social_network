@@ -2,7 +2,11 @@ const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
 const SETUSERS = "SET-USERS";
 
-let initialState = { users: [] }
+let initialState = { users: [],
+    pageSize: 5,
+    totalUsersCount: 0
+
+}
 
 const usersReducer = (state = initialState, action) => {
     switch (action.type) {
