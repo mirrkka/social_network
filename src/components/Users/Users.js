@@ -1,7 +1,7 @@
 import styles from './Users.module.css'
 import * as axios from 'axios'
 import React from 'react';
-//import userPhoto from '../../assets/images/user'
+import userPhoto from '../../assets/images/user.png'
 
 
 class Users extends React.Component {
@@ -19,7 +19,7 @@ class Users extends React.Component {
         this.props.users?.map( u =>  <div key = {u.id}>
             <span>
                 <div>
-                    <img src={u.photos.small != null ? u.photos.small: 'userPhoto'} className={styles.UserPhoto}/>
+                    <img src={u.photos.small != null ? u.photos.small: userPhoto} className={styles.UserPhoto}/>
                 </div>
                 <div>
                     {u.followed ? <button onClick = {() => {this.props.unfollow(u.id)}}>Unfollow</button>
