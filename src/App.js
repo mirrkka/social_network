@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Header from "./components/Header/Header";
+import HeaderContainer from "./components/Header/HeaderContainer";
 import Navbar from "./components/Navbar/Navbar";
 import ProfileContainer from "./components/MyPosts/Profile/ProfileContainer";
 import News from "./components/News/News";
@@ -14,11 +14,12 @@ const App = (props) => {
     return (
         <BrowserRouter>
             <div className="app-wrapper">
-                <Header />
+                <HeaderContainer />
                 <Navbar />
                 <div className="app-wrapper-content">
                     <Routes>
-                        <Route path="/profile/*" element={<ProfileContainer />} />
+                        <Route path='/profile/:userId'element={<ProfileContainer  />} />
+                        <Route path='/profile/*' element={<ProfileContainer/>} />
                         <Route path="/dialogs/*" element={<DialogsContainer />} />
                         <Route path="/news" element={<News />} />
                         <Route path="/music" element={<Music />} />
